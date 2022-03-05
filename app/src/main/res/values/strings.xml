@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="nameApp"><font color="#F6C833">DUKUN</font> CUACA</string>
+    <string name="text_main">make easier with Dukun Cuaca to know the weather on your location!</string>
 </resources>

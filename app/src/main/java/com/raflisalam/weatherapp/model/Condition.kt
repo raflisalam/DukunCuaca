@@ -1,4 +1,4 @@
-package com.raflisalam.weatherapp
+package com.raflisalam.weatherapp.model
 
 import com.google.gson.annotations.SerializedName
 
