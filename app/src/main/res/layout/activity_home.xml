@@ -14,7 +14,7 @@
         app:searchIcon="@drawable/ic_search"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="15dp" />
 
     <View
@@ -60,7 +60,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:src="@drawable/ic_partly_cloudy"
         android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="@id/view"
         app:layout_constraintTop_toBottomOf="@id/tv1"/>
@@ -97,7 +96,6 @@
         android:layout_height="40dp"
         android:layout_marginTop="26dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="20"
         android:textColor="#FBDB60"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@id/tvCondition"
@@ -108,7 +106,6 @@
         android:id="@+id/tvCondition"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:text="Partly Cloudy"
         android:textSize="20sp"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
@@ -147,7 +144,6 @@
         android:id="@+id/tvWind"
         android:layout_width="37dp"
         android:layout_height="wrap_content"
-        android:text="13.8"
         android:fontFamily="@font/poppins_medium"
         android:textSize="20sp"
         android:textColor="@color/white"
@@ -209,7 +205,6 @@
         android:id="@+id/tvHumidity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="35%"
         android:fontFamily="@font/poppins_medium"
         android:textSize="20sp"
         android:textColor="@color/white"
@@ -268,7 +263,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
         android:textSize="20sp"
-        android:text="1000"
         android:textColor="@color/white"
         android:layout_marginTop="30dp"
         android:layout_marginStart="10dp"
@@ -437,5 +431,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="15dp"/>
 
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today Forecast"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintTop_toBottomOf="@id/txtPM2"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvForecast"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt2"
+        android:layout_marginTop="10dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
