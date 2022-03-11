@@ -1,5 +1,6 @@
 package com.raflisalam.weatherapp.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.raflisalam.weatherapp.R
-import com.raflisalam.weatherapp.model.Condition
 import com.raflisalam.weatherapp.model.Hour
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -16,15 +16,10 @@ import java.util.*
 class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
 
     private lateinit var listForecast: List<Hour>
-    private lateinit var listCondition: List<Condition>
 
     fun setListForecast(listForecast: List<Hour>) {
         this.listForecast = listForecast
     }
-//
-//    fun listCondition(listCondition: Condition) {
-//        this.listCondition = listOf(listCondition)
-//    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvTemp = itemView.findViewById<TextView>(R.id.tvTemp)
@@ -37,6 +32,7 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
         return ViewHolder(view)
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val forecast = listForecast[position]
         val input = SimpleDateFormat("yyyy-MM-dd hh:mm")
@@ -48,20 +44,22 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
             e.printStackTrace()
         }
         holder.tvTemp.text = forecast.tempC.toString()
-//        val string = condition.text.toString()
-//        holder.imgTemp.setIcon(string)
+        val string = listForecast[position].condition?.text
+        if (string != null) {
+            holder.imgTemp.setIcon(string)
+        }
     }
 
     private fun ImageView.setIcon(string: String) {
-        if (string == "Light rain" || string.equals("Moderate rain")) {
+        if (string == "Light rain" || string == "Light rain shower" || string == "Moderate rain" || string == "Patchy rain possible") {
             setImageResource(R.drawable.ic_light_rain)
         } else if (string == "Partly cloudy") {
             setImageResource(R.drawable.ic_partly_cloudy)
-        } else if (string.equals("Overcast")) {
+        } else if (string == "Overcast") {
             setImageResource(R.drawable.ic_overcast)
-        } else if (string.equals("Fog")) {
+        } else if (string == "Fog") {
             setImageResource(R.drawable.ic_fog)
-        } else if (string.equals("Clear")) {
+        } else if (string == "Clear") {
             setImageResource(R.drawable.ic_clear)
         }
     }

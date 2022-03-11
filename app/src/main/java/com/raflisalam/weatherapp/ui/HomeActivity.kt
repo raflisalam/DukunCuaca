@@ -33,7 +33,7 @@ import java.util.*
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private var PERMISION_CODE: Int = 1
+    private var PERMISION_CODE: Int = 1000
     private lateinit var locationManager: LocationManager
     private lateinit var fusedLocation: FusedLocationProviderClient
     private lateinit var adapter: ForecastAdapter
@@ -64,8 +64,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setViewModel() {
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
-            WeatherViewModel::class.java)
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(WeatherViewModel::class.java)
         viewModel.getForecast().observe(this, {
             if (it !=null) {
                 adapter.setListForecast(it)

@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.raflisalam.weatherapp.ApiClient
-import com.raflisalam.weatherapp.model.Condition
 import com.raflisalam.weatherapp.model.Forecastday
 import com.raflisalam.weatherapp.model.Hour
 import com.raflisalam.weatherapp.model.Weather
@@ -16,7 +15,6 @@ import retrofit2.Response
 class WeatherViewModel: ViewModel() {
 
     val listForecast = MutableLiveData<List<Hour>>()
-    val listCondition = MutableLiveData<Condition>()
 
     fun setForecast(query: String) {
         ApiClient.instance.getWeather(query).enqueue(object : Callback<Weather> {
@@ -39,10 +37,6 @@ class WeatherViewModel: ViewModel() {
             }
 
         })
-    }
-
-    fun getCondition(): LiveData<Condition> {
-        return listCondition
     }
 
     fun getForecast(): LiveData<List<Hour>> {

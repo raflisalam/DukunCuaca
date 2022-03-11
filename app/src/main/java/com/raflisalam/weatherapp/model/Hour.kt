@@ -7,5 +7,5 @@ data class Hour(
     @SerializedName("temp_c")
     var tempC: Double? = null,
     @SerializedName("condition")
-    var condition: Condition? = Condition(),
+    var condition: Condition? = null
 )
