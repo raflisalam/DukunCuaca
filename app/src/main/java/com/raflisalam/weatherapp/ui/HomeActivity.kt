@@ -10,6 +10,7 @@ import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -46,6 +47,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+        searching()
+        setupAdapter()
+        setViewModel()
+        getPermission()
+    }
+
+    private fun searching() {
         binding.searching.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 val string = query.toString()
@@ -58,9 +66,6 @@ class HomeActivity : AppCompatActivity() {
                 return false
             }
         })
-        setupAdapter()
-        setViewModel()
-        getPermission()
     }
 
     private fun setViewModel() {
@@ -160,15 +165,15 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setIcon(string: String) {
-        if (string.equals("Light rain") || string.equals("Moderate rain")) {
+        if (string == "Light rain" || string == "Light rain shower" || string == "Moderate rain" || string == "Patchy rain possible") {
             binding.iconTemp.setImageResource(R.drawable.ic_light_rain)
-        } else if (string.equals("Partly cloudy")) {
+        } else if (string == "Partly cloudy") {
             binding.iconTemp.setImageResource(R.drawable.ic_partly_cloudy)
-        } else if (string.equals("Overcast")) {
+        } else if (string == "Overcast") {
             binding.iconTemp.setImageResource(R.drawable.ic_overcast)
-        } else if (string.equals("Fog")) {
+        } else if (string == "Fog") {
             binding.iconTemp.setImageResource(R.drawable.ic_fog)
-        } else if (string.equals("Clear")) {
+        } else if (string == "Clear") {
             binding.iconTemp.setImageResource(R.drawable.ic_clear)
         }
     }

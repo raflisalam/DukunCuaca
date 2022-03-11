@@ -43,7 +43,7 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        holder.tvTemp.text = forecast.tempC.toString()
+        holder.tvTemp.text = forecast.tempC?.toInt().toString()
         val string = listForecast[position].condition?.text
         if (string != null) {
             holder.imgTemp.setIcon(string)

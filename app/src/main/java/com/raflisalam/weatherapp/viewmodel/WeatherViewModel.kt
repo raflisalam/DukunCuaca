@@ -22,7 +22,6 @@ class WeatherViewModel: ViewModel() {
                 if (response.isSuccessful) {
                     val forecast = response.body()?.forecast!!
                     val forecastDay: List<Forecastday> = forecast.forecastday
-
                     for (data in forecastDay) {
                         val hourr: List<Hour> = data.hour
                         for (hour in hourr) {
