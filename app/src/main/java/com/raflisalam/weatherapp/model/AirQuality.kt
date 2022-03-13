@@ -9,6 +9,6 @@ data class AirQuality(
     var o3: Double? = null,
     @SerializedName("pm2_5")
     var pm25: Double? = null,
-    @SerializedName("us-epa-index")
+    @SerializedName("gb-defra-index")
     var aqiIndex: Int? = null
 )

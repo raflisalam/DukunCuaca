@@ -32,7 +32,7 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
         return ViewHolder(view)
     }
 
-    @SuppressLint("SimpleDateFormat")
+    @SuppressLint("SimpleDateFormat", "SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val forecast = listForecast[position]
         val input = SimpleDateFormat("yyyy-MM-dd hh:mm")
@@ -43,7 +43,7 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
         } catch (e: ParseException) {
             e.printStackTrace()
         }
-        holder.tvTemp.text = forecast.tempC?.toInt().toString()
+        holder.tvTemp.text = forecast.tempC?.toInt().toString() + "°"
         val string = listForecast[position].condition?.text
         if (string != null) {
             holder.imgTemp.setIcon(string)
@@ -51,7 +51,8 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
     }
 
     private fun ImageView.setIcon(string: String) {
-        if (string == "Light rain" || string == "Light rain shower" || string == "Moderate rain" || string == "Patchy rain possible") {
+        if (string == "Light rain" || string == "Light rain shower" || string == "Moderate rain" || string == "Patchy rain possible"
+            || string == "Moderate or heavy rain shower") {
             setImageResource(R.drawable.ic_light_rain)
         } else if (string == "Partly cloudy") {
             setImageResource(R.drawable.ic_partly_cloudy)
@@ -59,8 +60,14 @@ class ForecastAdapter: RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
             setImageResource(R.drawable.ic_overcast)
         } else if (string == "Fog") {
             setImageResource(R.drawable.ic_fog)
-        } else if (string == "Clear") {
+        } else if (string == "Clear" || string == "Sunny") {
             setImageResource(R.drawable.ic_clear)
+        }  else if (string == "Light snow") {
+            setImageResource(R.drawable.ic_light_snow)
+        } else if (string == "Heavy snow") {
+            setImageResource(R.drawable.ic_heavy_snow)
+        } else if (string == "Blizzard") {
+            setImageResource(R.drawable.ic_blizzard)
         }
     }
 

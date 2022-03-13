@@ -2,4 +2,16 @@
     <string name="app_name">WeatherApp</string>
     <string name="nameApp"><font color="#F6C833">DUKUN</font> CUACA</string>
     <string name="text_main">make easier with Dukun Cuaca to know the weather on your location!</string>
+    <string name="btnMoreDetail"><u>More Detail</u></string>
+    <string name="txt_overview"><u>Overview</u></string>
+    <string name="txt_risk_individual"><u>*Accompanying health messages for at-risk individuals :</u></string>
+    <string name="txt_risk_general"><u>*Accompanying health messages for the general population :</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="string_healthy_individual">Enjoy your usual outdoor activities</string>
+    <string name="string_moderate_individuals">Adults and children with lung problems, and adults with heart problems, who experience symptoms, should consider reducing strenuous physical activity, particularly outdoors.</string>
+    <string name="string_unhealthy_individual">Adults and children with lung problems, and adults with heart problems, should reduce strenuous physical exertion, particularly outdoors, and particularly if they experience symptoms. People with asthma may find they need to use their reliever inhaler more often. Older people should also reduce physical exertion.</string>
+    <string name="string_unhealthy_general">Anyone experiencing discomfort such as sore eyes, cough or sore throat should consider reducing activity, particularly outdoors.</string>
+    <string name="string_very_unhealthy_individual">Adults and children with lung problems, adults with heart problems, and older people, should avoid strenuous physical activity. People with asthma may find they need to use their reliever inhaler more often.</string>
+    <string name="string_very_unhealthy_general">Reduce physical exertion, particularly outdoors, especially if you experience symptoms such as cough or sore throat.</string>
 </resources>

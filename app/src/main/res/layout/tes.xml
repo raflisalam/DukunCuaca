@@ -29,12 +29,11 @@
         android:background="@drawable/rectangle"/>
 
     <TextView
-        android:id="@+id/tvDay"
+        android:id="@+id/tv1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Sunday, 20 Feb"
-        android:visibility="invisible"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Current Weather"
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginTop="18dp"
@@ -43,14 +42,15 @@
         app:layout_constraintTop_toTopOf="@+id/view"/>
 
     <TextView
-        android:id="@+id/tvLastUpdated"
-        android:layout_width="120dp"
+        android:id="@+id/dateTime"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="12sp"
         android:fontFamily="@font/poppins_medium"
+        android:text=""
         android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="@+id/tvDay"
-        app:layout_constraintBottom_toBottomOf="@id/tvDay"
+        app:layout_constraintTop_toTopOf="@+id/tv1"
+        app:layout_constraintBottom_toBottomOf="@id/tv1"
         app:layout_constraintEnd_toEndOf="@id/view"
         android:layout_marginEnd="15dp"/>
 
@@ -61,7 +61,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="@id/view"
-        app:layout_constraintTop_toBottomOf="@id/tvDay"/>
+        app:layout_constraintTop_toBottomOf="@id/tv1"/>
 
     <ImageView
         android:id="@+id/vectorLocation"
@@ -104,12 +104,12 @@
         android:id="@+id/tvCondition"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginEnd="15dp"
         android:textAlignment="center"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="54dp"
         app:layout_constraintBottom_toBottomOf="@id/view"
         app:layout_constraintEnd_toEndOf="@id/view"/>
 
@@ -122,6 +122,196 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/viewAqi1"/>
+
+    <!--    <View-->
+<!--        android:id="@+id/viewWind"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:background="#fff"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/viewHumidity"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/view" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtWind"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Wind"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="12sp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewWind"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewWind"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvWind"-->
+<!--        android:layout_width="37dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewWind"-->
+<!--        app:layout_constraintStart_toStartOf="@id/txtWind"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtMph"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="mph"-->
+<!--        android:textSize="10sp"-->
+<!--        android:visibility="invisible"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:layout_marginBottom="14dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewWind"-->
+<!--        app:layout_constraintStart_toStartOf="@id/tvWind"/>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/vectorWind"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:src="@drawable/ic_wind"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:layout_marginEnd="11dp"-->
+<!--        android:layout_marginBottom="13dp"-->
+<!--        android:layout_marginStart="54dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewWind"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/viewWind"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewWind"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/viewWind"/>-->
+
+<!--    <View-->
+<!--        android:id="@+id/viewHumidity"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_marginStart="130dp"-->
+<!--        android:layout_marginEnd="130dp"-->
+<!--        android:background="#fff"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/view" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtHumidity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Humidity"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="12sp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewHumidity"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewHumidity"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvHumidity"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:layout_marginStart="11dp"-->
+<!--        android:layout_marginEnd="38dp"-->
+<!--        android:layout_marginBottom="14dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewHumidity"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewHumidity"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/viewHumidity"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewHumidity"/>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/vectorHumidity"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:src="@drawable/ic_humidity"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:layout_marginStart="66dp"-->
+<!--        android:layout_marginEnd="11dp"-->
+<!--        android:layout_marginBottom="11dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewHumidity"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/viewHumidity"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewHumidity"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewHumidity"/>-->
+
+<!--    <View-->
+<!--        android:id="@+id/viewPressure"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        app:layout_constraintStart_toEndOf="@id/viewHumidity"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/view" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtPressure"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Air Pressure"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="12sp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewPressure"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewPressure"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvPressure"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/purple_700"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginEnd="44dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewPressure"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/viewPressure"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewPressure"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewPressure"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtMbar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:textSize="10sp"-->
+<!--        android:text="mbar"-->
+<!--        android:visibility="invisible"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_marginTop="52dp"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginEnd="60dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewPressure"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/viewPressure"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewPressure"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewPressure"/>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/vectorPressure"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:src="@drawable/ic_air_pressure"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:layout_marginStart="61dp"-->
+<!--        android:layout_marginEnd="9dp"-->
+<!--        android:layout_marginBottom="12.97dp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/viewPressure"-->
+<!--        app:layout_constraintStart_toStartOf="@id/viewPressure"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/viewPressure"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/viewPressure"/>-->
 
     <View
         android:id="@+id/viewAqi1"
@@ -165,7 +355,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/viewAqi2"
-        android:text="AQI INDEX"
+        android:text="LIVE AQI"
         android:visibility="invisible"
         android:textSize="14sp"
         android:layout_marginStart="13dp"
